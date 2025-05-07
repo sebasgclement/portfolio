@@ -1,4 +1,7 @@
 // components/TechDecorations.tsx
+import { FaCircle, FaCode, FaTools } from "react-icons/fa";
+import { SiJavascript, SiPython, SiPhp, SiHtml5, SiCss3, SiReact, SiNextdotjs, SiSymfony, SiDjango, SiExpress, SiNodedotjs, SiTailwindcss, SiSass, SiBootstrap, SiMui, SiMongodb, SiMysql, SiPostgresql, SiGraphql, SiFigma, SiFramer, SiGithub } from "react-icons/si";
+
 export default function TechDecorations() {
   return (
     <>
