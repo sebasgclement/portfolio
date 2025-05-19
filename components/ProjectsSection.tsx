@@ -1,29 +1,58 @@
-// components/ProjectsSection.tsx
 "use client";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+import {
+  SiMysql,
+  SiPhp,
+  SiSymfony,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiFramer,
+  SiStripe,
+} from "react-icons/si";
 
 const projects = [
   {
     title: "Portfolio Personal",
     description:
       "Mi sitio web personal donde muestro quién soy y qué hago como desarrollador.",
-    image: "/projects/portfolio.jpg",
+    images: ["/projects/portfolio.jpg"],
     link: "https://tusitio.dev",
+    techs: [
+      { label: "Next.js", icon: <SiNextdotjs /> },
+      { label: "Tailwind", icon: <SiTailwindcss /> },
+      { label: "Framer Motion", icon: <SiFramer /> },
+    ],
   },
   {
-    title: "Panel de Administración",
+    title: "Sistema de Tableros Institucionales",
     description:
-      "Dashboard hecho con Symfony + Vue, con control de usuarios y visualizaciones.",
-    image: "/projects/dashboard.jpg",
+      "Aplicación web desarrollada en Symfony para gestionar tableros de datos institucionales, con roles personalizados y visualización embebida de Power BI.",
+    images: [
+      "/projects/tableros1.png",
+      "/projects/tableros2.png",
+      "/projects/tableros3.png",
+      "/projects/tableros4.png",
+      "/projects/tableros5.png"
+    ],
     link: "#",
+    techs: [
+      { label: "Symfony", icon: <SiSymfony /> },
+      { label: "PHP", icon: <SiPhp /> },
+      { label: "MySQL", icon: <SiMysql /> },
+    ],
   },
   {
     title: "E-commerce Full Stack",
     description:
       "Plataforma de ventas hecha con Next.js y Stripe, integrada con base de datos.",
-    image: "/projects/ecommerce.jpg",
+    images: ["/projects/ecommerce.jpg"],
     link: "#",
+    techs: [
+      { label: "Next.js", icon: <SiNextdotjs /> },
+      { label: "Stripe", icon: <SiStripe /> },
+      { label: "MySQL", icon: <SiMysql /> },
+    ],
   },
 ];
 

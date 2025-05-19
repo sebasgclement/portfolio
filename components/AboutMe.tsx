@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import {
   SiJavascript, SiPython, SiPhp, SiHtml5, SiNextdotjs, SiSymfony, SiDjango, SiExpress, SiNodedotjs,
   SiTailwindcss, SiSass, SiBootstrap, SiMui, SiMongodb, SiMysql, SiPostgresql, SiGraphql,
-  SiFigma, SiFramer, SiGithub,
+  SiFigma, SiFramer, SiGithub, SiDotnet, SiExpo,
 } from "react-icons/si";
-import { FaCode } from "react-icons/fa";
+import { FaCode, FaJava } from "react-icons/fa";
 import AboutDecorations from "./AboutDecorations";
 
 export default function AboutMe() {
@@ -15,6 +15,7 @@ export default function AboutMe() {
     ["Python", <SiPython />],
     ["PHP", <SiPhp />],
     ["HTML / CSS", <SiHtml5 />],
+    ["Java", <FaJava />],
   ];
 
   const frameworks: [string, ReactElement][] = [
@@ -24,6 +25,8 @@ export default function AboutMe() {
     ["Express.js", <SiExpress />],
     ["Node.js", <SiNodedotjs />],
     ["Kivy", <FaCode />],
+    [".NET", <SiDotnet />],
+    ["Expo", <SiExpo />],
   ];
 
   const tools: [string, ReactElement][] = [
@@ -42,33 +45,34 @@ export default function AboutMe() {
 
   const renderCategory = (title: string, items: [string, ReactElement][]) => (
     <motion.div
-      className="backdrop-blur-sm bg-white/5 p-4 rounded-xl shadow-md border border-white/10"
+      className="text-left"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={{
         hidden: {},
         visible: {
-          transition: { staggerChildren: 0.05 }
-        }
+          transition: { staggerChildren: 0.05 },
+        },
       }}
     >
-      <h3 className="text-lg font-semibold text-white mb-4 border-b border-white/10 pb-2 tracking-wide">
+      <h3 className="text-xl font-semibold text-white mb-4 border-b border-white/10 pb-2 tracking-wide">
         {title}
       </h3>
-      <div className="flex flex-wrap gap-2 justify-center">
+      <ul className="space-y-3">
         {items.map(([label, icon]) => (
-          <motion.span
+          <motion.li
             key={label}
-            className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full shadow-sm hover:scale-105 transition"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-3 text-white/90 hover:text-teal-400 transition-colors"
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <span className="text-lg">{icon}</span> {label}
-          </motion.span>
+            <span className="text-xl">{icon}</span>
+            <span className="text-base">{label}</span>
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </motion.div>
   );
 
@@ -106,7 +110,7 @@ export default function AboutMe() {
           complejos y trabajar en interfaces modernas con tecnologías actuales.
         </motion.p>
 
-        <div className="grid gap-6 md:grid-cols-3 text-sm text-gray-200">
+        <div className="grid gap-12 md:grid-cols-3 text-sm text-gray-200 text-left mt-10">
           {renderCategory("Lenguajes", languages)}
           {renderCategory("Frameworks", frameworks)}
           {renderCategory("Herramientas y más", tools)}

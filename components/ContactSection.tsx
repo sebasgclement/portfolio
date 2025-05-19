@@ -6,7 +6,7 @@ import { FiCheck, FiCopy, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
-  const email = "tucorreo@ejemplo.com";
+  const email = "sebasclement.sc@gmail.com";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
@@ -79,7 +79,7 @@ export default function ContactSection() {
             transition={{ delay: 0.6, duration: 0.6 }}
           >
             <a
-              href="https://github.com/tuusuario"
+              href="https://github.com/sebasgclement"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-teal-400 transition"
@@ -87,7 +87,7 @@ export default function ContactSection() {
               <FiGithub />
             </a>
             <a
-              href="https://linkedin.com/in/tuusuario"
+              href="https://linkedin.com/in/sebastián-guido-clement-02678a200"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-teal-400 transition"
